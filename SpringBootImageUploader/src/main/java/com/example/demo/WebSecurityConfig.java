@@ -40,9 +40,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //zarządzanie dostępami z poziomu http
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/test1").authenticated()
+        http.authorizeRequests()
+                .antMatchers("/test1").hasRole("USER")
+                .antMatchers("/test2").hasRole("ADMIN")
                 .and()
-                .formLogin().permitAll();
+                .formLogin()
+                .permitAll();
     }
 
     @Bean
@@ -55,9 +58,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @EventListener(ApplicationReadyEvent.class)
     public void get() {
         appUserRepo.save(AppUser.builder()
-                .username("xxx")
-                .password(passwordEncoder().encode("xxx"))
-                .role("USER")
+                .username("uuu")
+                .password(passwordEncoder().encode("uuu"))
+                .role("ROLE_USER")
+                .build());
+
+        appUserRepo.save(AppUser.builder()
+                .username("aaa")
+                .password(passwordEncoder().encode("aaa"))
+                .role("ROLE_ADMIN")
                 .build());
     }
 }
