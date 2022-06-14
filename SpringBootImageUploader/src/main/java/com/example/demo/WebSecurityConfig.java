@@ -1,8 +1,12 @@
 package com.example.demo;
 
+import com.example.demo.model.AppUser;
+import com.example.demo.repository.AppUserRepo;
 import com.example.demo.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.EventListener;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,10 +18,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private UserDetailsServiceImpl userDetailsServiceImpl;
+    private AppUserRepo appUserRepo;
 
     @Autowired
-    public WebSecurityConfig(UserDetailsServiceImpl userDetailsService) {
+    public WebSecurityConfig(UserDetailsServiceImpl userDetailsService, AppUserRepo appUserRepo) {
         this.userDetailsServiceImpl = userDetailsService;
+        this.appUserRepo = appUserRepo;
     }
 
     //zarządzanie dostępami z poziomu bazy danych
@@ -42,5 +48,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    // to się odpali zawsze na początku - taki trigger
+    // zapisuje użytkownika nowego do bazy
+    @EventListener(ApplicationReadyEvent.class)
+    public void get() {
+        appUserRepo.save(AppUser.builder()
+                .username("xxx")
+                .password(passwordEncoder().encode("xxx"))
+                .role("USER")
+                .build());
     }
 }
