@@ -18,9 +18,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //zarządzanie dostępami z poziomu bazy danych
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser(
-                new User("xxx", passwordEncoder().encode("xxx"), Collections.singleton(new SimpleGrantedAuthority("user"))));
-        //String username, String password, Collection<? extends GrantedAuthority> authorities
+        //użytkownik pobieany z pamięci
+//        auth.inMemoryAuthentication().withUser(
+//                new User("xxx", passwordEncoder().encode("xxx"), Collections.singleton(new SimpleGrantedAuthority("user"))));
+
+        //użytkownik pobierany z bazy danych
+        auth.userDetailsService()
     }
 
     //zarządzanie dostępami z poziomu http
