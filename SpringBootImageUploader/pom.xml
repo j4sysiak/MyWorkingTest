@@ -27,13 +27,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.vaadin/vaadin -->
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin</artifactId>
+			<version>14.7.4</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-client -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client</artifactId>
-			<version>8.15.2</version>
+			<version>8.0.4</version>
 			<scope>provided</scope>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -74,6 +83,11 @@
 			<groupId>com.cloudinary</groupId>
 			<artifactId>cloudinary-taglib</artifactId>
 			<version>1.0.14</version>
+		</dependency>
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>SpringBootImageUploader</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
