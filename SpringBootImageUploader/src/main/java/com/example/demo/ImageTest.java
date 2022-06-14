@@ -19,5 +19,6 @@ public class ImageTest {
         File file = new File("smile.jpg");
         Map uploadResult = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
 
+        System.out.println("finish upload ...-->  https://cloudinary.com/console/c-fc254271d87950dc6996de43aa8e74/media_library/folders/home");
     }
 }
