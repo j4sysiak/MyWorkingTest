@@ -47,7 +47,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().permitAll()
                 .and()
-                .csrf().disable();
+                .csrf().disable(); // cross side request foreign - zabezpieczenie springa, zęby nie łączył się z zewnętrznego hosta
+
     }
 
     @Bean
