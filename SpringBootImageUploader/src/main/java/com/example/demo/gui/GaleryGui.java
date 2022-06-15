@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 
-@Route("galerty")
+@Route("galery")
 public class GaleryGui extends VerticalLayout {
 
     //wstrzykujemy w konstruktorze instancję ImageUploader

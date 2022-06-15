@@ -10,7 +10,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-@Route("image")
+@Route("upload")
 public class UploadGui extends VerticalLayout {
 
     //wstrzykujemy w konstruktorze instancję ImageUploader
