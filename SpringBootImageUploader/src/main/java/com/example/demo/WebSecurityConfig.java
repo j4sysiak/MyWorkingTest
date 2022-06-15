@@ -43,12 +43,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/test1").hasRole("USER")
                 .antMatchers("/test2").hasRole("ADMIN")
-                .antMatchers("/uploadImage").hasRole("ADMIN")
+                .antMatchers("/image").hasRole("ADMIN")
                 .and()
                 .formLogin().permitAll()
                 .and()
                 .csrf().disable(); // cross side request foreign - zabezpieczenie springa, zęby nie łączył się z zewnętrznego hosta
-
     }
 
     @Bean
