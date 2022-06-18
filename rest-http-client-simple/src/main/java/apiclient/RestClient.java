@@ -3,6 +3,7 @@ package apiclient;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,7 +11,8 @@ import java.net.URL;
 
 public class RestClient {
 
-    public static void main(String [] args) throws IOException {
+    @Test
+    public void test() throws IOException {
 
         // pobieramy jsona z jakiegoś zewnętrznego api  (lista różnych publicznych API: https://github.com/public-apis/public-apis)
         URL url = new URL("https://cat-fact.herokuapp.com/facts/random");
