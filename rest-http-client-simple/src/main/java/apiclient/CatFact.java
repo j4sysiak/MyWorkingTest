@@ -1,4 +1,4 @@
-package test;
+package apiclient;
 
 import javax.annotation.processing.Generated;
 
