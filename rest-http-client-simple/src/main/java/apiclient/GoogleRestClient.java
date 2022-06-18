@@ -1,12 +1,16 @@
 package apiclient;
 
 import apiclient.googlemodel.GooglePlace;
+import apiclient.googlemodel.Result;
 import com.google.gson.Gson;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class GoogleRestClient {
 
@@ -19,6 +23,11 @@ public class GoogleRestClient {
         InputStreamReader inputStreamReader = new InputStreamReader(url.openStream());
         GooglePlace googlePlace = new Gson().fromJson(inputStreamReader, GooglePlace.class);
         System.out.println(googlePlace);
+
+        System.out.println("Results: " + googlePlace.getResults());
+
+        googlePlace.getResults().stream()
+                .forEach(result -> System.out.println(result.getName()));
     }
 }
 
