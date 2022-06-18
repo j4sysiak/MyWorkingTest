@@ -14,51 +14,83 @@ public class Result {
     @SerializedName("geometry")
     @Expose
     private Geometry geometry;
+
+
     @SerializedName("icon")
     @Expose
     private String icon;
+
+
     @SerializedName("icon_background_color")
     @Expose
     private String iconBackgroundColor;
+
+
     @SerializedName("icon_mask_base_uri")
     @Expose
     private String iconMaskBaseUri;
+
+
     @SerializedName("name")
     @Expose
     private String name;
+
+
     @SerializedName("photos")
     @Expose
     private List<Photo> photos = null;
+
+
     @SerializedName("place_id")
     @Expose
     private String placeId;
+
+
     @SerializedName("reference")
     @Expose
     private String reference;
+
+
     @SerializedName("scope")
     @Expose
     private String scope;
+
+
     @SerializedName("types")
     @Expose
     private List<String> types = null;
+
+
     @SerializedName("vicinity")
     @Expose
     private String vicinity;
+
+
     @SerializedName("business_status")
     @Expose
     private String businessStatus;
+
+
     @SerializedName("opening_hours")
     @Expose
     private OpeningHours openingHours;
+
+
     @SerializedName("plus_code")
     @Expose
     private PlusCode plusCode;
+
+
     @SerializedName("price_level")
     @Expose
     private Integer priceLevel;
+
+
     @SerializedName("rating")
     @Expose
-    private Integer rating;
+    private Double rating;
+
+
     @SerializedName("user_ratings_total")
     @Expose
     private Integer userRatingsTotal;
@@ -183,11 +215,11 @@ public class Result {
         this.priceLevel = priceLevel;
     }
 
-    public Integer getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 

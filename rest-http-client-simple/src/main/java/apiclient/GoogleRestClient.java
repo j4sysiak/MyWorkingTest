@@ -18,6 +18,7 @@ public class GoogleRestClient {
         URL url = new URL(URL);
         InputStreamReader inputStreamReader = new InputStreamReader(url.openStream());
         GooglePlace googlePlace = new Gson().fromJson(inputStreamReader, GooglePlace.class);
+        System.out.println(googlePlace);
     }
 }
 
