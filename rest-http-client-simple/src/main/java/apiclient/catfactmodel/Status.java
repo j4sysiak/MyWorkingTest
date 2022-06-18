@@ -1,4 +1,4 @@
-package apiclient;
+package apiclient.catfactmodel;
 
 import javax.annotation.processing.Generated;
 

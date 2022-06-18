@@ -2,10 +2,12 @@ package apiclient.googlemodel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import lombok.ToString;
 
 import javax.annotation.processing.Generated;
 
 @Generated("jsonschema2pojo")
+@ToString
 public class Geometry {
 
     @SerializedName("location")
