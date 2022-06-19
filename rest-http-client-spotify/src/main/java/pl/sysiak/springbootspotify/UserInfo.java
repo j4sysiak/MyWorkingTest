@@ -1,4 +1,6 @@
-package com.example.demo;
+package pl.sysiak.springbootspotify;
+
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +14,8 @@ public class UserInfo {
         return principal;
     }
 
-    @GetMapping("/login")
-    public Principal login(Principal principal) {
+    @GetMapping("/hello")
+    public Principal hello(Principal principal) {
         return principal;
     }
 }
