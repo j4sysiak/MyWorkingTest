@@ -15,7 +15,6 @@ import pl.sysiak.springbootspotify.model.SpotifyAlbum;
 @RestController
 public class SpotifyAlbumClient {
 
-
     @GetMapping("/album/{authorName}")
     public SpotifyAlbum getAlbumsByAuthor(OAuth2Authentication details, @PathVariable String authorName) {
         String jwt = ((OAuth2AuthenticationDetails)details.getDetails()).getTokenValue();
