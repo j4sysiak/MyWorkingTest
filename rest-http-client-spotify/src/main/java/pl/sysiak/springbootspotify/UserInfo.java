@@ -14,6 +14,11 @@ public class UserInfo {
         return principal;
     }
 
+    @GetMapping("/login")
+    public Principal login(Principal principal) {
+        return principal;
+    }
+
     @GetMapping("/hello")
     public Principal hello(Principal principal) {
         return principal;
