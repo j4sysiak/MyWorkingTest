@@ -17,14 +17,17 @@ public class RectangleSizeGui  extends VerticalLayout {
     private RectangleRepo rectangleRepo;
 
     private TextArea textAreaRectangles;
+    private TextField textFieldSize;
 
     @Autowired
     public RectangleSizeGui(RectangleRepo rectangleRepo) {
         this.rectangleRepo = rectangleRepo;
+        this.textFieldSize = new TextField();
         this.textAreaRectangles = new TextArea();
 
-        textAreaRectangles.setValue(rectangleRepo.getListOfBigRectangles().toString());
+        textAreaRectangles.setValue(rectangleRepo.getListOfBigRectangles(Integer.parseInt(textFieldSize.getValue())).toString());
         add(textAreaRectangles);
+        add(textFieldSize);
     }
 
 
