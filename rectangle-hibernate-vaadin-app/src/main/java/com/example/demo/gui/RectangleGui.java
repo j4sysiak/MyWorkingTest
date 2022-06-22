@@ -7,6 +7,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 // odpalamy tą stronę:  http://localhost:8080/rectanglegui
 
@@ -22,7 +24,7 @@ public class RectangleGui extends VerticalLayout {
     private Button button;
 
     @Autowired  // służy do wstrzykiwania rectangleRepo
-    public RectangleGui() {
+    public RectangleGui(RectangleRepo rectangleRepo) {
         this.rectangleRepo = rectangleRepo;
         this.textFieldHeight = new TextField("Podaj wysokość: ");
         this.textFieldWeight = new TextField("Podaj szerokość: ");
