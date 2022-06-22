@@ -27,11 +27,11 @@ public class RectangleSizeGui extends VerticalLayout {
         this.buttonBigger = new Button("Pokaż większe");
         this.buttonSmaller = new Button("Pokaż mniejsze");
 
-        buttonBigger.addClickListener(buttonClickEvent -> rectangleRepo
-                .getListOfBigRectangles(Integer.parseInt(textFieldSize.getValue())).toString());
+        buttonBigger.addClickListener(buttonClickEvent -> textAreaRectangles.setValue(rectangleRepo
+                .getListOfBigRectangles(Integer.parseInt(textFieldSize.getValue())).toString()));
 
-        buttonSmaller.addClickListener(buttonClickEvent -> rectangleRepo
-                .getListOfSmallRectangles(Integer.parseInt(textFieldSize.getValue())).toString());
+        buttonSmaller.addClickListener(buttonClickEvent -> textAreaRectangles.setValue(rectangleRepo
+                .getListOfSmallRectangles(Integer.parseInt(textFieldSize.getValue())).toString()));
 
         add(textAreaRectangles);
         add(textFieldSize);
