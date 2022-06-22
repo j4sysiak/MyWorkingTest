@@ -17,4 +17,9 @@ public class Rectangle {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    private int height;
+    private int weight;
+
+    //musi być konstruktor bezparametrowy - ale załatwiam to Lombokiem
+
 }
