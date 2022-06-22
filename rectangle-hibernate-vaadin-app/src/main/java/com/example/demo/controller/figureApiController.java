@@ -13,7 +13,7 @@ public class figureApiController {
     public int calculate(@RequestParam String figure,
                          @RequestParam int siteA,
                          @RequestParam int siteB,
-                         @RequestParam(required = false) int siteC) {
+                         @RequestParam(required = false) Integer siteC) {
         if (figure.equalsIgnoreCase("RECTANGLE")) {
             return 2 * siteA + 2 * siteB;
         } else if (figure.equalsIgnoreCase("TRIANGLE")) {
