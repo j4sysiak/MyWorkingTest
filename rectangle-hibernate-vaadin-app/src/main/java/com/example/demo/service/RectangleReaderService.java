@@ -64,7 +64,7 @@ public class RectangleReaderService {
                 .weight(siteB4)
                 .build();
 
-        System.out.println("Zapis tych elementó do bazy");
+        System.out.println("Zapis tych elementó do bazy");  // localhost:8080/figureDB
         rectangleRepo.save(r1);
         rectangleRepo.save(r2);
         rectangleRepo.save(r3);
